@@ -1,0 +1,13 @@
+runtime: nodejs20
+service: telegram-bot
+env: standard
+instance_class: F2
+automatic_scaling:
+  min_instances: 1
+  max_instances: 3
+  target_cpu_utilization: 0.6
+env_variables:
+  NODE_ENV: production
+  PORT: 8080
+beta_settings:
+  cloud_sql_instances: your-project:region:instance-name

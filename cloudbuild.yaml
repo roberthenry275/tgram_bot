@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'migrate']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy']
+  env:
+    - 'CLOUD_PROVIDER=GCP'
